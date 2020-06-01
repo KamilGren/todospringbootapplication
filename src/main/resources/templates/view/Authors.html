@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${Title}">Authors</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="column-12">
+            <h2>Author Form</h2>
+            <form action="#" th:action="@{${isAdd} ? '/save ' : '/update'}" th:object="${Author}" method="post">
+                  <div class="form-group">
+                <input type="text" class="form-control" id="firstName" placeholder="First Name" th:field="*{firstName}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="lastName" placeholder="Last Name" th:field="*{lastName}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="bookType" placeholder="Book Type" th:field="*{bookType}">
+                </div>
+                <button type="submit"class="btn btn-primary" th:text="${isAdd} ? '/save' : '/update'">Submit</button>
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+
+
+
+</body>
+</html>
